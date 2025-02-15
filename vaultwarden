@@ -1,0 +1,13 @@
+
+services:
+  vaultwarden:
+    container_name: ds-vaultwarden
+    image: vaultwarden/server
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - "./data:/data"
+    environment:
+      - TZ=Asia/Seoul
+      - ADMIN_TOKEN=@qkrwndnjs12
