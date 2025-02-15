@@ -1,0 +1,23 @@
+services:
+    adguardhome:
+        image: adguard/adguardhome
+        ports:
+            - '55443:5443/udp'
+            - '55443:5443/tcp'
+            - '48853:8853/udp'
+            - '8853:853/udp'
+            - '7784:784/udp'
+            - '8853:853/tcp'
+            - '33000:3000/tcp'
+            - '4443:443/udp'
+            - '4443:443/tcp'
+            - '880:80/tcp'
+            - '668:68/udp'
+            - '667:67/udp'
+            - '553:53/udp'
+            - '553:53/tcp'
+        volumes:
+            - './confdir:/opt/adguardhome/conf'
+            - './workdir:/opt/adguardhome/work'
+        restart: always
+        container_name: adguardhome
